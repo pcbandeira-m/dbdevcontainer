@@ -26,7 +26,7 @@ Para testar as 18 consultas (`SELECT`), você deve primeiro preparar a estrutura
    * Certifique-se de que a conexão `postgres` e o esquema `public` estão selecionados no topo.
    * Use o atalho **`Alt + X`** em cada um para rodar o script completo.
 2. **Testar as Consultas:**
-   * Abra o arquivo desejado (`comandos_select.sql` ou `comandos_juncoes`).
+   * Abra o arquivo desejado (`comandos_select.sql` ou `comandos_juncoes.sql`).
    * Clique em cima do `SELECT` desejado e pressione **`Ctrl + Enter`** para exibir os resultados na tabela inferior.
 
 ---
@@ -42,4 +42,4 @@ Para testar as 18 consultas (`SELECT`), você deve primeiro preparar a estrutura
    * Escolha *PostgreSQL* e configure com: Server=`localhost` (ou `127.0.0.1`), Port=`5432`, Database=`postgres`, Username=`postgres` e sua senha. Salve e clique no plugue para conectar.
 3. **Rodar os Scripts:**
    * Abra o arquivo `consultas_ddl.sql` e depois o `consultas_dml.sql`. Clique em **`Run on active connection`** no topo de cada arquivo.
-   * Abra o arquivo desejado (`comandos_select.sql` ou `comandos_juncoes`), selecione com o mouse o comando `SELECT` que deseja testar e pressione **`Ctrl + E, Ctrl + E`** para ver o resultado na aba lateral.
+   * Abra o arquivo desejado (`comandos_select.sql` ou `comandos_juncoes.sql`), selecione com o mouse o comando `SELECT` que deseja testar e pressione **`Ctrl + E, Ctrl + E`** para ver o resultado na aba lateral.
