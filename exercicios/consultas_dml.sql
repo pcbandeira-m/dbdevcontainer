@@ -52,13 +52,15 @@ INSERT INTO medico (cpf_pessoa, crm) VALUES
 ('10020030055', 'CRM/RN 9922'),
 ('10020030066', 'CRM/RN 9933'),
 ('10020030077', 'CRM/RN 9944'),
-('10020030088', 'CRM/RN 9955');
+('10020030088', 'CRM/RN 9955'),
+('33344455599', 'CRM/RN 9966');
 
 -- 4. Inserindo Especialidades
 INSERT INTO especialidade (descricao) VALUES 
 ('Cardiologia'),
 ('Pediatria'),
-('Clínica Médica');
+('Clínica Médica'),
+('Psiquiatria');
 
 -- 5. Associando Médicos às Especialidades (Relacionamento N:M)
 INSERT INTO medico_especialidade (cpf_medico, id_especialidade) VALUES
@@ -69,7 +71,8 @@ INSERT INTO medico_especialidade (cpf_medico, id_especialidade) VALUES
 ('10020030055', 2),
 ('10020030066', 3),
 ('10020030077', 1),
-('10020030088', 3);
+('10020030088', 3),
+('33344455599', 2);
 
 -- 6. Inserindo Histórico de Agendamentos para os Testes
 INSERT INTO agendamento (cpf_paciente, cpf_medico, data_hora_consulta, data_hora_agendamento, valor_consulta) VALUES
@@ -79,4 +82,7 @@ INSERT INTO agendamento (cpf_paciente, cpf_medico, data_hora_consulta, data_hora
 ('33344455599', '10020030066', '2026-07-17 16:30:00', '2026-07-12 10:00:00', 0.00),
 ('44433322211', '10020030044', '2026-08-05 09:00:00', '2026-07-15 14:20:00', 180.00),
 ('55544433322', '10020030055', '2026-08-05 10:30:00', '2026-07-15 14:30:00', 75.00),
-('44433322200', '10020030088', '2026-12-15 11:00:00', '2026-11-20 08:00:00', 90.00);
+('44433322200', '10020030088', '2026-12-15 11:00:00', '2026-11-20 08:00:00', 90.00),
+('55566677788', '11122233344', '2020-12-05 10:00:00', '2020-11-25 09:15:00', 200.00),
+('99988877766', '11122233344', '2020-12-15 14:30:00', '2020-12-01 16:00:00', 100.00),
+('44455566611', '22233344455', '2020-12-20 09:00:00', '2020-12-10 11:00:00', 250.00);
