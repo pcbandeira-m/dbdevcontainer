@@ -1,6 +1,11 @@
-# Sistema de Agendamento Clínico
+# Exercícios 03 e 04
 
-Este projeto consiste em um sistema de banco de dados relacional para gerenciamento de agendamentos de consultas médicas. A estrutura foi desenvolvida com base no mapeamento de entidades como Pessoas, Pacientes, Médicos, Especialidades e Agendamentos, garantindo a integridade dos dados e o histórico de consultas.
+### Exercício 03 - Construção do Script com os Comandos SELECT do Contexto de "Agendamento de Consultas"
+### Exercício 04 - Construção do Script com os operadores de JUNÇÃO do Contexto de "Agendamento de Consultas"
+
+### Componentes:
+- Alisson Bruno Dantas Felix
+- Patricia Cristina Bandeira de Melo
 
 ---
 
