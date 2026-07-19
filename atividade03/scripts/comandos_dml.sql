@@ -1,11 +1,8 @@
--- ============================================================================
--- SCRIPT DML: MANIPULAÇÃO DE DADOS (B1 AO B11)
--- SGBD: PostgreSQL
--- ============================================================================
+-- =================================
+-- SCRIPT DML: MANIPULAÇÃO DE DADOS
+-- =================================
 
--- ----------------------------------------------------------------------------
 -- B1. Inserir 5 registros em cada uma das tabelas do modelo
--- ----------------------------------------------------------------------------
 
 INSERT INTO USUARIO (id_usuario, nome, sobrenome, data_nascimento, email, contato, mini_biografia) VALUES
 (1, 'Carlos', 'Eduardo', '1995-12-05', 'carlos.edu@gmail.com', '84988881111', 'Adoro viajar e conversar.'),
@@ -54,76 +51,55 @@ INSERT INTO RESERVA (id_usuario, id_carona) VALUES
 (3, 103),
 (1, 105);
 
--- ----------------------------------------------------------------------------
 -- B2. Um comando UPDATE para atualizar um campo de todos os registros de uma tabela
--- ----------------------------------------------------------------------------
-
+-- Ativa o limite de banco traseiro padrão para todas as caronas do sistema
 UPDATE CARONA 
 SET limite_banco_traseiro = TRUE;
 
--- ----------------------------------------------------------------------------
 -- B3. Um comando UPDATE para atualizar um campo que satisfaz uma condição simples
--- ----------------------------------------------------------------------------
-
+-- Altera a cor do veículo cuja placa é 'ABC1234' para 'Grafite'
 UPDATE VEICULO 
 SET cor = 'Grafite' 
 WHERE placa = 'ABC1234';
 
--- ----------------------------------------------------------------------------
 -- B4. Um comando UPDATE para atualizar um campo que satisfaz uma condição composta
--- ----------------------------------------------------------------------------
-
+-- Aumenta a quantidade de passageiros permitidos para 4 se a carona for do motorista 4 E a rota for a 20
 UPDATE CARONA 
 SET qntd_passageiros = 4 
 WHERE id_motorista = 4 AND id_rota = 20;
 
--- ----------------------------------------------------------------------------
 -- B5. Um comando UPDATE para atualizar dois campos que satisfazem uma condição
--- ----------------------------------------------------------------------------
-
+-- Modifica o valor e adiciona um comentário na carona 103
 UPDATE CARONA 
 SET valor_passageiro = 12.50, comentario = 'Valor reajustado devido aos novos custos.' 
 WHERE id_carona = 103;
 
--- ----------------------------------------------------------------------------
 -- B6. Um comando UPDATE para atualizar um campo usando o antigo valor desse campo
--- ----------------------------------------------------------------------------
-
+-- Adiciona mais R$ 1.50 ao valor cobrado na carona 101 baseando-se no preço anterior
 UPDATE CARONA 
 SET valor_passageiro = valor_passageiro + 1.50 
 WHERE id_carona = 101;
 
--- ----------------------------------------------------------------------------
 -- B7. Um comando UPDATE para atualizar um campo usando uma função
--- ----------------------------------------------------------------------------
-
+-- Transforma o sobrenome de todos os usuários em letras maiúsculas usando a função UPPER()
 UPDATE USUARIO 
 SET sobrenome = UPPER(sobrenome);
 
--- ----------------------------------------------------------------------------
 -- B8. Um comando DELETE para remover todos os registros de uma tabela
--- ----------------------------------------------------------------------------
--- IMPORTANTE: Como este comando exige a exclusão de todos os registros de uma tabela, escolhemos a tabela ROTA_PARADAS porque, se esvaziássemos uma tabela como USUARIO ou ROTA, as chaves estrangeiras das outras tabelas impediriam a execução devido às restrições de integridade. Portanto, os comandos seguintes (B9, B10, B11) usam dados das tabelas que permaneceram intactas para funcionar perfeitamente.
-
+-- Remove todos as paradas intermediárias registradas na tabela ROTA_PARADAS
 DELETE FROM ROTA_PARADAS;
 
--- ----------------------------------------------------------------------------
 -- B9. Um comando DELETE para remover registros que satisfazem uma condição simples
--- ----------------------------------------------------------------------------
-
+-- Remove o veículo específico cuja placa é 'KJD9988'
 DELETE FROM VEICULO 
 WHERE placa = 'KJD9988';
 
--- ----------------------------------------------------------------------------
 -- B10. Um comando DELETE para remover registros que satisfazem uma condição composta
--- ----------------------------------------------------------------------------
-
+-- Remove a reserva do usuário 1 na carona 102 (Desistência da carona específica)
 DELETE FROM RESERVA 
 WHERE id_usuario = 1 AND id_carona = 102;
 
--- ----------------------------------------------------------------------------
 -- B11. Um comando DELETE baseado em uma função
--- ----------------------------------------------------------------------------
-
+-- Remove usuários cujo comprimento (LENGTH) do primeiro nome seja menor ou igual a 3 caracteres (Ex: 'Ana')
 DELETE FROM USUARIO 
 WHERE LENGTH(nome) <= 3;
